@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process</title>
+  <style>
+    body {
+      background-color: #10141d;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+  
+    .flow-container {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      position: relative;
+    }
+
+  
+    .step {
+      position: relative;
+      text-align: center;
+      opacity: 0.3;
+      transition: opacity 0.5s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .step.active {
+      opacity: 1;
+    }
+
+    .step img {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      background: #fff;
+      padding: 10px;
+    }
+
+    .label {
+      margin-top: 8px;
+      color: white;
+      font-size: 14px;
+    }
+
+  
+    .check {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #4CAF50;
+      border-radius: 50%;
+      color: white;
+      font-size: 14px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .step.active .check {
+      opacity: 1;
+    }
+
+
+    .line {
+      position: absolute;
+      top: 35px; 
+      height: 4px;
+      background: linear-gradient(to right, #007bff, #0056b3);
+      z-index: -1;
+      width: 0;
+      transition: width 1s linear;
+    }
+
+    .line1 { left: 85px; }
+    .line2 { left: 235px; }
+    .line3 { left: 405px; }
+    .line4 { left: 575px; }
+
+    .line1.full { width: 100px; }
+    .line2.full { width: 120px; }
+    .line3.full { width: 120px; }
+    .line4.full { width: 120px; }
+
+
+    #reportBtn {
+      display: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #reportBtn:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="flow-container">
+    <div class="step">
+      <div class="check">✔</div>
+      <img src="https://img.icons8.com/color/96/combo-chart.png" alt="Analysis">
+      <div class="label">Image Analysis</div>
+    </div>
+
+    <div class="line line1"></div>
+
+    <div class="step">
+      <div class="check">✔</div>
+      <img src="https://img.icons8.com/ios/100/search--v1.png" alt="Search">
+      <div class="label">Image Detection</div>
+    </div>
+
+    <div class="line line2"></div>
+
+    <div class="step">
+      <div class="check">✔</div>
+      <img src="https://img.icons8.com/3d-fluency/94/laptop.png" alt="Laptop">
+      <div class="label">3D Terrain Model</div>
+    </div>
+
+    <div class="line line3"></div>
+
+    <div class="step">
+      <div class="check">✔</div>
+      <img src="https://img.icons8.com/ios-filled/100/map.png" alt="Map">
+      <div class="label">Hazard Map Scaling</div>
+    </div>
+
+    <div class="line line4"></div>
+
+    <div class="step">
+      <div class="check">✔</div>
+      <img src="https://img.icons8.com/color/96/route.png" alt="Route">
+      <div class="label">Autonomous Path Generation</div>
+    </div>
+  </div>
+
+
+  <button id="reportBtn">Generate Report</button>
+
+  <script>
+    const steps = document.querySelectorAll(".step");
+    const lines = document.querySelectorAll(".line");
+    const reportBtn = document.getElementById("reportBtn");
+
+    let index = 0;
+
+    function activateStep() {
+      if (index < steps.length) {
+        steps[index].classList.add("active");
+        if (index > 0) {
+          lines[index - 1].classList.add("full");
+        }
+        index++;
+      } else {
+        clearInterval(timer);
+        reportBtn.style.display = "block";
+      }
+    }
+
+    const timer = setInterval(activateStep, 1000);
+    activateStep();
+
+    reportBtn.addEventListener("click", () => {
+      window.location.href = "report.html";
+    });
+  </script>
+</body>
+</html>

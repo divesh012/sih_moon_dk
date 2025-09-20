@@ -1,0 +1,74 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  z-index: 40;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand .logo {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, #1f6fff, #ffffff20);
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 800;
+}
+
+.nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.proceed-hero {
+  height: 100vh;
+  background: url("bgimg1.jpg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;     
+  align-items: flex-end;      
+  text-align: center;
+  padding-bottom: 0;           
+}
+
+.proceed-inner {
+  margin-bottom: 100px;        
+}
+
+.proceed-inner h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.proceed-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #fff;
+  color: black;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+}

@@ -1,0 +1,57 @@
+
+.site-header{
+  position:fixed;top:0;left:0;right:0;
+  height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 28px;z-index:40;
+  background:linear-gradient(180deg, rgba(7,12,18,0.55), rgba(7,12,18,0.15));
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(4px);
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .logo{
+  width:36px;height:36px;border-radius:6px;
+  background:linear-gradient(135deg,var(--accent),#ffffff20);
+  display:grid;place-items:center;
+  color:#fff;font-weight:800;font-size:14px
+}
+.brand span{font-weight:800;letter-spacing:1px}
+.nav{display:flex;gap:22px;align-items:center}
+.nav a{color:rgba(230,238,248,0.85);text-decoration:none;font-weight:500}
+.nav .btn{background:var(--accent);padding:8px 14px;border-radius:8px;color:white}
+.btn{
+    background-color: blue;
+    color: white;
+}
+
+.nav a{
+    color: rgb(176, 163, 163);
+    text-decoration: none;
+}
+.nav a:hover{
+    color: white;
+}
+/* Video container for better control */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;   /* You can adjust this max size */
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 15px;   /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Make video responsive */
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Optional: Add a hover effect */
+.video-container:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease;
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hazard Risk Report</title>
+  <link rel="stylesheet" href="report.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .report-container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #1e293b;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .risk-level {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .safety {
+      color: #22c55e; /* green */
+      font-weight: bold;
+    }
+
+    .bar-chart {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .bar {
+      width: 60px;
+      background-color: #334155;
+      border-radius: 6px;
+      position: relative;
+      height: 150px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .bar-fill {
+      width: 100%;
+      border-radius: 6px;
+      background-color: #fb923c; /* orange */
+    }
+
+    .bar-label {
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .detail-card {
+      background-color: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .detail-card h4 {
+      margin: 10px 0;
+      font-size: 18px;
+      color: #cbd5e1;
+    }
+
+    .detail-card p {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+    <header class="site-header">
+    <div class="brand">
+      <div class="logo">L</div>
+      <span>LUNARIUS</span>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+      <a href="#features">Feature</a>
+      <a class="btn" href="proceed.html">Explore</a>
+    </nav>
+  </header>
+<body>
+  <div class="video-container">
+  <video id="video1" controls>
+    <source src="VN20250920_155601.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+<!-- 
+  <video id="video2" controls style="display:none;">
+    <source src="Chandrayaan_Lunar_Exploration_Video.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video> -->
+</div>
+
+  <!-- <div class="video-container">
+      <video controls autoplay muted>
+  <source src="WhatsApp Video 2025-09-20 at 11.33.26_85755b36.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+    <video controls autoplay muted>
+  <source src="Chandrayaan_Lunar_Exploration_Video.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video> -->
+
+    <!-- <video  src="Chandrayaan_Lunar_Exploration_Video.mp4" ></video> -->
+  </div>
+  <div class="report-container">
+
+    <!-- Hazard Risk Assessment -->
+    <div class="card">
+      <h2>Hazard Risk Assessment</h2>
+      <div class="risk-level">MEDIUM</div>
+      <div class="safety">Overall Safety +70%</div>
+
+      <div class="bar-chart">
+        <div>
+          <div class="bar"><div class="bar-fill" style="height: 30%;"></div></div>
+          <div class="bar-label">Low</div>
+        </div>
+        <div>
+          <div class="bar"><div class="bar-fill" style="height: 80%;"></div></div>
+          <div class="bar-label">Medium</div>
+        </div>
+        <div>
+          <div class="bar"><div class="bar-fill" style="height: 10%;"></div></div>
+          <div class="bar-label">High</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Safe Path Details -->
+    <div class="card">
+      <h2>Safe Path Details</h2>
+      <div class="details">
+        <div class="detail-card">
+          <h4>Confidence Level</h4>
+          <p>98%</p>
+        </div>
+        <div class="detail-card">
+          <h4>Accuracy Score</h4>
+          <p>96%</p>
+        </div>
+        <div class="detail-card">
+          <h4>Path Length</h4>
+          <p>5.2 km</p>
+        </div>
+        <div class="detail-card">
+          <h4>Estimated Travel Time</h4>
+          <p>2 hours 30 minutes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- <script>
+  const video1 = document.getElementById('video1');
+const video2 = document.getElementById('video2');
+
+video1.addEventListener('ended', () => {
+  video1.style.display = 'none';  // Hide first video
+  video2.style.display = 'block'; // Show second video
+  video2.play();                   // Start second video automatically
+});
+
+</script> -->
+
+<script>
+  window.addEventListener("load", () => {
+    const video = document.getElementById("video1");
+    // Ensure autoplay works by muting first (required in most browsers)
+    video.muted = true;
+    video.play().catch(err => {
+      console.warn("Autoplay blocked:", err);
+    });
+  });
+</script>
+
+</html>
